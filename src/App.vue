@@ -13,6 +13,7 @@
       >
         {{ link.label }}
       </v-btn>
+      <v-btn @click="toggleTheme" text rounded>Toggle Theme</v-btn>
     </v-app-bar>
 
     <v-main>
@@ -54,5 +55,11 @@ export default {
       { label: 'Signup', url: '/sign-up' },
     ],
   }),
+  methods: {
+    toggleTheme() {
+      this.$vuetify.theme.themes.dark.anchor = '#41B883';
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    },
+  },
 };
 </script>
